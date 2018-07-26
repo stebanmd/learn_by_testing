@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegisterDeckComponent } from './register-deck/register-deck.component';
-import { HomeComponent } from './home/home.component';
-import { SelectDeckComponent } from './select-deck/select-deck.component';
-import { TestComponent } from './test/test.component';
+import { RegisterDeckComponent } from './components/register-deck/register-deck.component';
+import { HomeComponent } from './components/home/home.component';
+import { SelectDeckComponent } from './components/select-deck/select-deck.component';
+import { TestComponent } from './components/test/test.component';
 
 const routes: Routes = [
   {

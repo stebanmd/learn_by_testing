@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SelectDeckComponent } from './select-deck/select-deck.component';
-import { RegisterDeckComponent } from './register-deck/register-deck.component';
-import { TestComponent } from './test/test.component';
-import { HomeComponent } from './home/home.component';
+import { SelectDeckComponent } from './components/select-deck/select-deck.component';
+import { RegisterDeckComponent } from './components/register-deck/register-deck.component';
+import { TestComponent } from './components/test/test.component';
+import { HomeComponent } from './components/home/home.component';
+import { DataService } from './services/data.service';
+
+
 
 @NgModule({
   declarations: [
@@ -18,9 +23,13 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

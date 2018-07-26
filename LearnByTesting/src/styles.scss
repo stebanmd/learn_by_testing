@@ -1,1 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+$primary: #2E9CE6;
+$secondary: #57B3F1;
+$dark: #2885c4;
+$item: #3FA0E1;
+$text: #FFF;
+$selected: #003a61;
+
+body {
+    background: $primary;
+    padding: 3em;
+    font-family: 'Raleway', 'Arial';
+    color: $text;
+}
+.navbar ul {
+    list-style-type: none;
+    margin:0 0 2em 0;
+    padding: 0;
+    li {
+        display: inline;
+        margin-left: 30px;
+        a {
+            font-size: 1.5em;
+        }
+    }
+}
+
+a {
+    color:#fff;
+    text-decoration: none;
+}
+
+
+.container{
+    display: grid;    
+}
+
+.col {
+    padding: .4em 1.3em
+}
+.color-dark {
+    background: $dark;
+}
+.color-light {
+    background: $secondary;
+}
+input.txt {
+    border: 0;
+    padding: 1em;
+    width: 80%;
+    margin-bottom: 2em;
+}
+.btn {
+    border: 0;
+    display: block;
+    padding: 1em 3em;
+    background: #A5f883;
+    color: #003a61;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.decks-container {
+    padding: 1em;    
+    ul {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: 50% auto;
+        li {
+            margin: 5px;
+            background: $item;
+            padding: .5em;
+            font-weight: bold;
+            cursor: pointer;            
+        }
+        .selected-option {
+            background: #003a61;
+        }
+    }
+}
+
