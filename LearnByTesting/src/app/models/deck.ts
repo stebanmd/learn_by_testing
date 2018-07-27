@@ -1,7 +1,11 @@
-interface Deck {
+export class Deck {
     id: string;
     name: string;
     description: string;
-    
-    cards: Card[]
+
+    cards: Array<Card>;
+}
+
+export class DeckModel extends Deck {
+    selected: boolean;
 }

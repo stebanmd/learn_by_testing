@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'register',
+    path: 'decks',
     component: RegisterDeckComponent
   },
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     component: SelectDeckComponent
   },
   {
-    path: 'testing/:decks',
+    path: 'testing/:time/:decks',
     component: TestComponent
   }
 ];

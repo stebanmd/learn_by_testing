@@ -1,3 +1,37 @@
-<p>
-  register-deck works!
-</p>
+<div class="container col-50 color-dark">
+  <div class="col">
+    <p class="sm">Cutomize your deck</p>
+  </div>
+  <div class="col">
+    <p class="sm">Your current decks</p>
+  </div>
+</div>
+<div class="container color-light">
+  <div class="col-50">
+    <div class="col">
+      <form>
+        <label for="name">Name:</label>
+        <br>
+        <input type="text" id="name" name="name" class="txt" placeholder="Name your deck" [(ngModel)]="deck.name">
+        <br>
+        <label for="description">Description:</label>
+        <br>
+        <textarea name="description" class="txt" id="description" rows="10" [(ngModel)]="deck.description"></textarea>
+        <hr>
+        <div class="line">
+          <input *ngIf="!inEditMode" type="submit" class="btn btn-success" value="Add">
+          <input *ngIf="inEditMode"  type="submit" class="btn btn-success" value="Save">
+          <button *ngIf="inEditMode" (click)="remove()" class="btn btn-rmv">Remove</button>
+          <button *ngIf="inEditMode" (click)="editCards()" class="btn btn-success">Cards</button>
+          <button *ngIf="inEditMode" (click)="cancel()" class="btn btn-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <div class="small-decks-list">
+      <ul>
+        <li *ngFor="let item of decks" (click)="selectDeck(item)" [ngClass]="{'selected-option': item.selected}">{{item.name}}</li>
+      </ul>
+    </div>
+
+  </div>
+</div>

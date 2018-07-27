@@ -10,6 +10,7 @@ import { RegisterDeckComponent } from './components/register-deck/register-deck.
 import { TestComponent } from './components/test/test.component';
 import { HomeComponent } from './components/home/home.component';
 import { DataService } from './services/data.service';
+import { RegisterCardsComponent } from './components/register-cards/register-cards.component';
 
 
 
@@ -19,7 +20,8 @@ import { DataService } from './services/data.service';
     SelectDeckComponent,
     RegisterDeckComponent,
     TestComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterCardsComponent
   ],
   imports: [
     BrowserModule,

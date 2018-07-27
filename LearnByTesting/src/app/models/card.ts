@@ -1,4 +1,4 @@
-interface Card {
+class Card {
     id: string;
     deckId: string;
 
