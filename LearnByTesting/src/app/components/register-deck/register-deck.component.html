@@ -10,13 +10,14 @@
   <div class="col-50">
     <div class="col">
       <form (submit)="saveChanges($event)">
-        <label for="name">Name:</label>
-        <br>
-        <input type="text" id="name" name="name" class="txt" placeholder="Name your deck" [(ngModel)]="deck.name">
-        <br>
-        <label for="description">Description:</label>
-        <br>
-        <textarea name="description" class="txt" id="description" rows="10" [(ngModel)]="deck.description"></textarea>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" class="txt" placeholder="Name your deck" [(ngModel)]="deck.name">
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>          
+          <textarea name="description" class="txt" id="description" rows="10" [(ngModel)]="deck.description"></textarea>
+        </div>
         <hr>
         <div class="line">
           <input type="submit" class="btn btn-success" [value]="buttonLabel">

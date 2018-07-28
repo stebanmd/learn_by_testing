@@ -62,9 +62,12 @@ export class RegisterCardsComponent implements OnInit {
   }
 
   private add(): void {
-    this.currentCard.deckId = this.deckId;
-    this.cards.unshift(this.currentCard);
-    this.resetForm();
+    if (this.currentCard.kana.length > 0 && this.currentCard.romanji.length > 0) {
+      this.currentCard.deckId = this.deckId;
+      this.currentCard.id = (Math.random() * 40293930).toString();
+      this.cards.unshift(this.currentCard);
+      this.resetForm();
+    }
   }
 
 }

@@ -12,7 +12,7 @@
       <form (submit)="save($event)">
         <div class="col-50">
           <div class="form-group">
-            <label for="romanji">Romanji:</label>
+            <label for="romanji">* Romanji:</label>
             <input type="text" id="romanji" name="romanji" class="txt" [(ngModel)]="currentCard.romanji">
           </div>
           <div class="form-group">
@@ -22,7 +22,7 @@
         </div>
         <div class="col-50">
           <div class="form-group">
-            <label for="kana">Kana:</label>
+            <label for="kana">* Kana:</label>
             <input type="text" id="kana" name="kana" class="txt" [(ngModel)]="currentCard.kana">
           </div>
           <div class="form-group">

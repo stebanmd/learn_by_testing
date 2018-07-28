@@ -49,6 +49,7 @@ export class SelectDeckComponent implements OnInit {
   selectedDecks = [];
 
   ngOnInit() {
+    this.timeToTest = '00:00';
   }
 
   selectDeck($event, deck) {
@@ -75,9 +76,17 @@ export class SelectDeckComponent implements OnInit {
       this.errorMesg = "Não foi selecionado nenhum deck para teste";
       return;
     }
+    if (this.timeToTest == undefined) {
+      this.timeToTest = "0000";
+    }
+    this.timeToTest = this.timeToTest.replace(':', '');
 
-    this.router.navigate(['testing', '0000', 'kkk,ccc,sss'])
-    
+    var decksToTest = "";
+    this.selectedDecks.forEach(element => {
+      decksToTest += ',' + element.id      
+    });
+    decksToTest = decksToTest.substr(1);
+    this.router.navigate(['testing', this.timeToTest, decksToTest]);    
   }
 
 }
