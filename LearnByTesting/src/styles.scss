@@ -8,6 +8,7 @@ $item: #3FA0E1;
 $text: #FFF;
 $selected: #003a61;
 $error: #be5543;
+$correct: #A5f883;
 body {
   background: $primary;
   padding: 3em;
@@ -53,7 +54,7 @@ input.txt,
 textarea.txt {
   border: 0;
   padding: 1em;
-  display:block;
+  display: block;
   width: 100%;
   margin-bottom: 2em;
   margin-top: .5em;
@@ -83,7 +84,7 @@ button.btn {
 }
 
 .btn-success {
-  background: #A5f883;
+  background: $correct;
   color: #003a61;
 }
 
@@ -138,6 +139,12 @@ button.btn {
     .selected-option {
       background: #003a61;
     }
+    .correct {
+      background: $primary
+    }
+    .incorrect {
+      background: $error;
+    }
   }
 }
 
@@ -159,4 +166,15 @@ button.btn {
       background: #003a61;
     }
   }
+}
+
+.guess {
+  display: block;
+  text-align: center;
+  font-size: 70px;
+}
+
+.answer-list {
+  overflow: hidden;
+  max-height: 210px;
 }

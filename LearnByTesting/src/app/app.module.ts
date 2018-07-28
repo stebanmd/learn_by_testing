@@ -11,6 +11,7 @@ import { TestComponent } from './components/test/test.component';
 import { HomeComponent } from './components/home/home.component';
 import { DataService } from './services/data.service';
 import { RegisterCardsComponent } from './components/register-cards/register-cards.component';
+import { ResultComponent } from './components/result/result.component';
 
 
 
@@ -21,7 +22,8 @@ import { RegisterCardsComponent } from './components/register-cards/register-car
     RegisterDeckComponent,
     TestComponent,
     HomeComponent,
-    RegisterCardsComponent
+    RegisterCardsComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
