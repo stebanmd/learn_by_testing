@@ -53,9 +53,15 @@ input.txt,
 textarea.txt {
   border: 0;
   padding: 1em;
-  width: 90%;
+  display:block;
+  width: 100%;
   margin-bottom: 2em;
   margin-top: .5em;
+}
+
+.form-group {
+  display: block;
+  padding-right: 2em;
 }
 
 textarea {

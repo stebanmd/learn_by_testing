@@ -1,12 +1,17 @@
-class Card {
-    id: string;
-    deckId: string;
+export class Card {
 
-    kana: string;
-    kanji:string;
-    romanji: string;
-    translateTo: string;
-    mnemonic: string;
-    howToDraw: string;
-    pronunciation: string;
+    public id: string;
+    public deckId: string;
+
+    public kana: string;
+    public kanji:string;
+    public romanji: string;
+    public translateTo: string;
+    public mnemonic: string;
+    public howToDraw: string;
+    public pronunciation: string;
+}
+
+export class CardModel extends Card {
+    public selected: boolean;
 }

@@ -9,7 +9,7 @@
 <div class="container color-light">
   <div class="col-50">
     <div class="col">
-      <form>
+      <form (submit)="saveChanges($event)">
         <label for="name">Name:</label>
         <br>
         <input type="text" id="name" name="name" class="txt" placeholder="Name your deck" [(ngModel)]="deck.name">
@@ -19,17 +19,15 @@
         <textarea name="description" class="txt" id="description" rows="10" [(ngModel)]="deck.description"></textarea>
         <hr>
         <div class="line">
-          <input *ngIf="!inEditMode" type="submit" class="btn btn-success" value="Add">
-          <input *ngIf="inEditMode"  type="submit" class="btn btn-success" value="Save">
-          <button *ngIf="inEditMode" (click)="remove()" class="btn btn-rmv">Remove</button>
-          <button *ngIf="inEditMode" (click)="editCards()" class="btn btn-success">Cards</button>
-          <button *ngIf="inEditMode" (click)="cancel()" class="btn btn-cancel">Cancel</button>
+          <input type="submit" class="btn btn-success" [value]="buttonLabel">
+          <button type="button" *ngIf="inEditMode" (click)="remove()" class="btn btn-rmv">Remove</button>
+          <button type="button" *ngIf="inEditMode" (click)="editCards()" class="btn btn-success">Cards</button>
         </div>
       </form>
     </div>
     <div class="small-decks-list">
       <ul>
-        <li *ngFor="let item of decks" (click)="selectDeck(item)" [ngClass]="{'selected-option': item.selected}">{{item.name}}</li>
+        <li *ngFor="let item of decks" (click)="selectDeck(item)" [class.selected-option]="item.selected">{{item.name}}</li>
       </ul>
     </div>
 

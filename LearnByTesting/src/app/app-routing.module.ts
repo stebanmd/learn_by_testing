@@ -4,23 +4,23 @@ import { RegisterDeckComponent } from './components/register-deck/register-deck.
 import { HomeComponent } from './components/home/home.component';
 import { SelectDeckComponent } from './components/select-deck/select-deck.component';
 import { TestComponent } from './components/test/test.component';
+import { RegisterCardsComponent } from './components/register-cards/register-cards.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent
+    path: '', component: HomeComponent
   },
   {
-    path: 'decks',
-    component: RegisterDeckComponent
+    path: 'decks', component: RegisterDeckComponent
   },
   {
-    path: 'choose',
-    component: SelectDeckComponent
+    path: 'cards/:deck', component: RegisterCardsComponent
   },
   {
-    path: 'testing/:time/:decks',
-    component: TestComponent
+    path: 'choose', component: SelectDeckComponent
+  },
+  {
+    path: 'testing/:time/:decks', component: TestComponent
   }
 ];
 

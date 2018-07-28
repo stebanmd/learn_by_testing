@@ -1,3 +1,58 @@
-<p>
-  register-cards works!
-</p>
+<div class="container col-50 color-dark">
+  <div class="col">
+    <p class="sm">You are editing the deck: {{deckName}}</p>
+  </div>
+  <div class="col">
+    <p class="sm">This deck's cards</p>
+  </div>
+</div>
+<div class="container color-light">
+  <div class="col-50">
+    <div class="col">
+      <form (submit)="save($event)">
+        <div class="col-50">
+          <div class="form-group">
+            <label for="romanji">Romanji:</label>
+            <input type="text" id="romanji" name="romanji" class="txt" [(ngModel)]="currentCard.romanji">
+          </div>
+          <div class="form-group">
+            <label for="translateTo">Translate to:</label>
+            <input type="text" id="translateTo" name="translateTo" class="txt" [(ngModel)]="currentCard.translateTo">
+          </div>
+        </div>
+        <div class="col-50">
+          <div class="form-group">
+            <label for="kana">Kana:</label>
+            <input type="text" id="kana" name="kana" class="txt" [(ngModel)]="currentCard.kana">
+          </div>
+          <div class="form-group">
+            <label for="kanji">Kanji:</label>
+            <input type="text" id="kanji" name="kanji" class="txt" [(ngModel)]="currentCard.kanji">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="mnemonic">Mnemonic:</label>
+          <input type="text" id="mnemonic" name="mnemonic" class="txt" [(ngModel)]="currentCard.mnemonic">
+        </div>
+        <div class="col-50">
+          <label style="margin-bottom: 15px;" for="howToDraw">How to Draw:</label>
+          <input type="file" accept="image/x-png,image/gif,image/jpeg" id="howToDraw" name="howToDraw" [(ngModel)]="currentCard.kana">
+          <label for="pronunciation">Pronunciation:</label>
+          <input type="file" accept="audio/mp3" id="pronunciation" name="pronunciation" [(ngModel)]="currentCard.pronunciation">
+        </div>
+        <hr>
+        <div class="line">
+          <input type="submit" class="btn btn-success" [value]="buttonLabel">
+          <button type="button" *ngIf="inEditMode" (click)="remove()" class="btn btn-rmv">Remove</button>
+        </div>
+      </form>
+    </div>
+    <div class="small-decks-list">
+      <ul *ngIf="cards">
+        <li *ngFor="let item of cards" (click)="selectCard(item)" [class.selected-option]="item.selected">{{item.kana }}</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
