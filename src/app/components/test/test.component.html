@@ -1,0 +1,35 @@
+<div class="container color-dark col-50">
+  <div class="col">
+    <p>Test your knowledge</p>
+  </div>
+  <div class="col">
+    <p>
+      <strong>00:00   -----> {{diff}}</strong>
+    </p>
+  </div>
+</div>
+<div class="container color-light col-50">
+  <div>
+    <div class="guess">
+      {{currentCard.kana}}
+    </div>
+    <form (submit)="answer($event)" class="col">
+      <div class="form-group">
+        <input type="text" class="txt" name="myAnswer" placeholder="Your Answer" [(ngModel)]="myAnswer">
+      </div>
+      <input type="submit" class="btn btn-success" value="Check">
+    </form>
+  </div>
+  <div class="decks-list-container answer-list">
+    <ul>
+      <li *ngFor="let item of answerGiven" [ngClass]="{'correct': item.isCorrect, 'incorrect': !item.isCorrect}">
+        <i *ngIf="!item.isCorrect" class="fa fa-times-circle"></i>
+        <i *ngIf="item.isCorrect" class="fa fa-check"></i>
+        &nbsp;&nbsp;&nbsp;
+        {{item.correctAnswer}} (<strong>{{item.kana}}</strong>)
+        <span *ngIf="!item.isCorrect"> not "{{item.typed}}"</span>
+      </li>
+    </ul>
+  </div>
+
+</div>
