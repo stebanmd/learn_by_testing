@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import jav_data from '../../jav_data.json';
 
 @Component({
   selector: 'app-select-deck',
@@ -8,85 +9,58 @@ import { Router } from '@angular/router';
   styleUrls: ['./select-deck.component.scss']
 })
 export class SelectDeckComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
+  selectAllBtnLabel = 'Select all decks';
+  allSelected = false;
 
   timeToTest: string;
   errorMesg: string;
-
-  decks = [
-    {name: "Hiragana A Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana K Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana S Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana T Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana N Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana H Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana Y Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana R Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana G Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana Z Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana D Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana B Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana P Column", id: "05qj0h5ag", selected: false },
-    {name: "Hiragana KY Column", id: "05qj0h5ag", selected: false },
-
-    {name: "Katakana A Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana K Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana S Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana T Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana N Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana H Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana Y Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana R Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana G Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana Z Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana D Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana B Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana P Column", id: "05qj0h5ag", selected: false },
-    {name: "Katakana KY Column", id: "05qj0h5ag", selected: false },
-  ];
-
+  decks: any = (<any>jav_data).decks;
   selectedDecks = [];
 
   ngOnInit() {
-    this.timeToTest = '00:00';
+    this.timeToTest = '1';
   }
 
   selectDeck($event, deck) {
     if (this.selectedDecks.indexOf(deck) > -1) {
       this.selectedDecks.splice(this.selectedDecks.indexOf(deck), 1);
       deck.selected = false;
-    }
-    else {
+    } else {
       this.selectedDecks.push(deck);
       deck.selected = true;
-    }    
+    }
   }
 
   selectAll() {
-    for(let deck of this.decks) { 
-      if (this.selectedDecks.indexOf(deck) < 0)
-        this.selectedDecks.push(deck);
-      deck.selected = true;
+    if (this.allSelected) {
+      this.selectedDecks.splice(0, this.selectedDecks.length);
+      this.decks.forEach(d => (d.selected = false));
+    } else {
+      for (let deck of this.decks) {
+        if (this.selectedDecks.indexOf(deck) < 0) this.selectedDecks.push(deck);
+        deck.selected = true;
+      }
     }
+
+    this.allSelected = !this.allSelected;
+    this.selectAllBtnLabel = this.allSelected ? 'Deselect all decks' : 'Select all decks';
   }
 
   startTest() {
     if (this.selectedDecks.length == 0) {
-      this.errorMesg = "Não foi selecionado nenhum deck para teste";
+      this.errorMesg = 'Não foi selecionado nenhum deck para teste';
       return;
     }
     if (this.timeToTest == undefined) {
-      this.timeToTest = "0000";
+      this.timeToTest = '0';
     }
-    this.timeToTest = this.timeToTest.replace(':', '');
 
-    var decksToTest = "";
+    var decksToTest = '';
     this.selectedDecks.forEach(element => {
-      decksToTest += ',' + element.id      
+      decksToTest += ',' + element.name;
     });
     decksToTest = decksToTest.substr(1);
-    this.router.navigate(['testing', this.timeToTest, decksToTest]);    
+    this.router.navigate(['testing', this.timeToTest, decksToTest]);
   }
-
 }

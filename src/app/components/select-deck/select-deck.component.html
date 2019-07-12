@@ -7,18 +7,16 @@
 <div class="decks-list-container color-light">
   <div class="col-50">
     <div>
-      <button class="btn btn-success" (click)="selectAll()">Select all decks</button>
+      <button class="btn btn-success" (click)="selectAll()">{{ selectAllBtnLabel }}</button>
     </div>
     <div class="col">
-      <label for="time">How long shoud the test last? </label>
-      <input type="time" name="time" [(ngModel)]="timeToTest">
+      <label for="time">How long shoud the test last? (minutes)</label>
+      <input type="number" name="time" [(ngModel)]="timeToTest" />
     </div>
   </div>
-  <hr>
+  <hr />
   <ul>
-    <li *ngFor="let item of decks" 
-        (click)="selectDeck($event, item)" 
-        [ngClass]="{'selected-option': item.selected}">{{item.name}}</li>
+    <li *ngFor="let item of decks" (click)="selectDeck($event, item)" [ngClass]="{ 'selected-option': item.selected }">{{ item.name }}</li>
   </ul>
 </div>
 
@@ -29,6 +27,6 @@
   </button>
 
   <div class="error" *ngIf="errorMesg && errorMesg.length > 0">
-      <strong>{{errorMesg}}</strong> 
-  </div>    
+    <strong>{{ errorMesg }}</strong>
+  </div>
 </div>

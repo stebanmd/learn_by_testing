@@ -1,0 +1,190 @@
+{
+  "decks": [
+    {
+      "name": "Hiragana Coluna A",
+      "selected": false,
+      "cards": [
+        { "kana": "あ", "romanji": "a" },
+        { "kana": "い", "romanji": "i" },
+        { "kana": "う", "romanji": "u" },
+        { "kana": "え", "romanji": "e" },
+        { "kana": "お", "romanji": "o" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna K",
+      "selected": false,
+      "cards": [
+        { "kana": "か", "romanji": "ka" },
+        { "kana": "き", "romanji": "ki" },
+        { "kana": "く", "romanji": "ku" },
+        { "kana": "け", "romanji": "ke" },
+        { "kana": "こ", "romanji": "ko" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna S",
+      "selected": false,
+      "cards": [
+        { "kana": "さ", "romanji": "sa" },
+        { "kana": "し", "romanji": "shi" },
+        { "kana": "す", "romanji": "su" },
+        { "kana": "せ", "romanji": "se" },
+        { "kana": "そ", "romanji": "so" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna T",
+      "selected": false,
+      "cards": [
+        { "kana": "た", "romanji": "ta" },
+        { "kana": "ち", "romanji": "chi" },
+        { "kana": "つ", "romanji": "tsu" },
+        { "kana": "て", "romanji": "te" },
+        { "kana": "と", "romanji": "to" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna N",
+      "selected": false,
+      "cards": [
+        { "kana": "な", "romanji": "na" },
+        { "kana": "に", "romanji": "ni" },
+        { "kana": "ぬ", "romanji": "nu" },
+        { "kana": "ね", "romanji": "ne" },
+        { "kana": "の", "romanji": "no" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna H",
+      "selected": false,
+      "cards": [
+        { "kana": "は", "romanji": "ha" },
+        { "kana": "ひ", "romanji": "hi" },
+        { "kana": "ふ", "romanji": "hu" },
+        { "kana": "へ", "romanji": "he" },
+        { "kana": "ほ", "romanji": "ho" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna M",
+      "selected": false,
+      "cards": [
+        { "kana": "ま", "romanji": "ma" },
+        { "kana": "み", "romanji": "mi" },
+        { "kana": "む", "romanji": "mu" },
+        { "kana": "め", "romanji": "me" },
+        { "kana": "も", "romanji": "mo" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna Y",
+      "selected": false,
+      "cards": [{ "kana": "や", "romanji": "ya" }, { "kana": "ゆ", "romanji": "yu" }, { "kana": "よ", "romanji": "yo" }]
+    },
+    {
+      "name": "Hiragana Coluna R",
+      "selected": false,
+      "cards": [
+        { "kana": "ら", "romanji": "ra" },
+        { "kana": "り", "romanji": "ri" },
+        { "kana": "る", "romanji": "ru" },
+        { "kana": "れ", "romanji": "re" },
+        { "kana": "ろ", "romanji": "ro" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna W",
+      "selected": false,
+      "cards": [{ "kana": "わ", "romanji": "wa" }, { "kana": "を", "romanji": "wo" }, { "kana": "ん", "romanji": "n" }]
+    },
+    {
+      "name": "Hiragana Coluna G - Diacritics (gojūon with (han)dakuten)",
+      "selected": false,
+      "cards": [
+        { "kana": "が", "romanji": "ga" },
+        { "kana": "ぎ", "romanji": "gi" },
+        { "kana": "ぐ", "romanji": "gu" },
+        { "kana": "げ", "romanji": "ge" },
+        { "kana": "ご", "romanji": "go" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna Z - Diacritics (gojūon with (han)dakuten)",
+      "selected": false,
+      "cards": [
+        { "kana": "ざ", "romanji": "za" },
+        { "kana": "じ", "romanji": "ji" },
+        { "kana": "ず", "romanji": "zu" },
+        { "kana": "ぜ", "romanji": "ze" },
+        { "kana": "ぞ", "romanji": "zo" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna D - Diacritics (gojūon with (han)dakuten)",
+      "selected": false,
+      "cards": [
+        { "kana": "だ", "romanji": "da" },
+        { "kana": "ぢ", "romanji": "di" },
+        { "kana": "づ", "romanji": "dzu" },
+        { "kana": "で", "romanji": "de" },
+        { "kana": "ど", "romanji": "do" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna B - Diacritics (gojūon with (han)dakuten)",
+      "selected": false,
+      "cards": [
+        { "kana": "ば", "romanji": "ba" },
+        { "kana": "び", "romanji": "bi" },
+        { "kana": "ぶ", "romanji": "bu" },
+        { "kana": "べ", "romanji": "be" },
+        { "kana": "ぼ", "romanji": "bo" }
+      ]
+    },
+    {
+      "name": "Hiragana Coluna P - Diacritics (gojūon with (han)dakuten)",
+      "selected": false,
+      "cards": [
+        { "kana": "ぱ", "romanji": "pa" },
+        { "kana": "ぴ", "romanji": "pi" },
+        { "kana": "ぷ", "romanji": "pu" },
+        { "kana": "ぺ", "romanji": "pe" },
+        { "kana": "ぽ", "romanji": "po" }
+      ]
+    },
+    {
+      "name": "Hiragana Digraphs (yōon)",
+      "selected": false,
+      "cards": [
+        { "kana": "きゃ", "romanji": "kya" },
+        { "kana": "きゅ", "romanji": "kyu" },
+        { "kana": "きょ", "romanji": "kyo" },
+
+        { "kana": "しゃ", "romanji": "sha" },
+        { "kana": "しゅ", "romanji": "shu" },
+        { "kana": "しょ", "romanji": "sho" },
+
+        { "kana": "ちゃ", "romanji": "cha" },
+        { "kana": "ちゅ", "romanji": "chu" },
+        { "kana": "ちょ", "romanji": "cho" },
+
+        { "kana": "にゃ", "romanji": "nya" },
+        { "kana": "にゅ", "romanji": "nyu" },
+        { "kana": "にょ", "romanji": "nyo" },
+
+        { "kana": "ひゃ", "romanji": "hya" },
+        { "kana": "ひゅ", "romanji": "hyu" },
+        { "kana": "ひょ", "romanji": "hyo" },
+
+        { "kana": "みゃ", "romanji": "mya" },
+        { "kana": "みゅ", "romanji": "myu" },
+        { "kana": "みょ", "romanji": "myo" },
+
+        { "kana": "りゃ", "romanji": "rya" },
+        { "kana": "りゅ", "romanji": "ryu" },
+        { "kana": "りょ", "romanji": "ryo" }
+      ]
+    }
+  ]
+}

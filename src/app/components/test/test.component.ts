@@ -10,13 +10,18 @@ import { interval } from 'rxjs';
 export class TestComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
+  minutes = '';
+  seconds = '';
+  hasTimer = true;
+  isFinished = false;
+
   currentCard: any;
   cards = [
     { kana: 'あ', romanji: 'a' },
-    { kana: 'え', romanji: 'e' },
     { kana: 'い', romanji: 'i' },
-    { kana: 'お', romanji: 'o' },
     { kana: 'う', romanji: 'u' },
+    { kana: 'え', romanji: 'e' },
+    { kana: 'お', romanji: 'o' },
     { kana: 'か', romanji: 'ka' },
     { kana: 'き', romanji: 'ki' },
     { kana: 'く', romanji: 'ku' },
@@ -32,18 +37,40 @@ export class TestComponent implements OnInit {
   myAnswer: string = '';
 
   ngOnInit() {
+    console.log(this.route);
+
     this.setNewCard();
 
-    this.$counter = interval(1000).subscribe(x => {
-      this.diff = Math.floor((this.future.getTime() - new Date().getTime()) / 1000);
-      return x;
+    this.route.params.subscribe(p => {
+      var timeExtimate = p.time;
+
+      console.log(p, timeExtimate);
+
+      if (timeExtimate !== 0) {
+        var until = new Date().getTime();
+        until += timeExtimate * 60 * 1000;
+
+        this.$counter = interval(1000).subscribe(x => {
+          var now = new Date().getTime();
+          var distance = until - now;
+
+          this.minutes = '' + Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          this.seconds = '' + Math.floor((distance % (1000 * 60)) / 1000);
+
+          if (this.minutes === '0' && this.seconds === '0') {
+            this.finishTest();
+          }
+
+          console.log(x);
+          return x;
+        });
+      } else {
+        this.hasTimer = false;
+      }
     });
   }
 
-  public future: Date = new Date(2018, 6, 29);
-  public futureString: string;
-  public diff: number = 0;
-  public $counter: any;
+  public $counter: any = undefined;
 
   answer($event): void {
     $event.preventDefault();
@@ -62,6 +89,15 @@ export class TestComponent implements OnInit {
 
     this.answerGiven.unshift(newAns);
     this.setNewCard();
+  }
+
+  finishTest(): void {
+    if (this.$counter) {
+      this.$counter = undefined;
+    }
+
+    this.hasTimer = false;
+    this.isFinished = true;
   }
 
   setNewCard(): void {
