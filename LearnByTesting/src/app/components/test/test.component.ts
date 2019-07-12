@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Card } from '../../models/card';
-
 import { interval } from 'rxjs';
-import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'app-test',
@@ -11,8 +8,7 @@ import { map } from 'rxjs/operators'
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
-
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   currentCard: any;
   cards = [
@@ -25,7 +21,7 @@ export class TestComponent implements OnInit {
     { kana: 'き', romanji: 'ki' },
     { kana: 'く', romanji: 'ku' },
     { kana: 'け', romanji: 'ke' },
-    { kana: 'こ', romanji: 'ko' },
+    { kana: 'こ', romanji: 'ko' }
   ];
 
   answerGiven: Answer[] = [
@@ -37,26 +33,17 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {
     this.setNewCard();
-   
-    this.$counter = interval(1000).subscribe(
-      (x) => {
-         this.diff = Math.floor((this.future.getTime() - new Date().getTime()) / 1000);
-         return x;
-     })
-   
+
+    this.$counter = interval(1000).subscribe(x => {
+      this.diff = Math.floor((this.future.getTime() - new Date().getTime()) / 1000);
+      return x;
+    });
   }
 
-  
-  private future: Date = new Date(2018, 6, 29);
-  private futureString: string;
-  private diff: number = 0;
-  private $counter: any;
-
-
-
-
-
-  
+  public future: Date = new Date(2018, 6, 29);
+  public futureString: string;
+  public diff: number = 0;
+  public $counter: any;
 
   answer($event): void {
     $event.preventDefault();
@@ -77,10 +64,9 @@ export class TestComponent implements OnInit {
     this.setNewCard();
   }
 
-  private setNewCard(): void {
+  setNewCard(): void {
     let nextIndex = Math.floor(Math.random() * this.cards.length);
-    while (nextIndex === this.cards.indexOf(this.currentCard))
-      nextIndex = Math.floor(Math.random() * this.cards.length);
+    while (nextIndex === this.cards.indexOf(this.currentCard)) nextIndex = Math.floor(Math.random() * this.cards.length);
     this.currentCard = this.cards[nextIndex];
     this.myAnswer = '';
   }
