@@ -1,0 +1,32 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Select the decks you want to test</p>
+  </div>
+</div>
+
+<div class="decks-list-container color-light">
+  <div class="col-50">
+    <div>
+      <button class="btn btn-success" (click)="selectAll()">{{ selectAllBtnLabel }}</button>
+    </div>
+    <div class="col">
+      <label for="time">How long shoud the test last? (minutes)</label>
+      <input type="number" name="time" [(ngModel)]="timeToTest" min="0" max="60" />
+    </div>
+  </div>
+  <hr />
+  <ul>
+    <li *ngFor="let item of decks" (click)="selectDeck($event, item)" [ngClass]="{ 'selected-option': item.selected }">{{ item.name }}</li>
+  </ul>
+</div>
+
+<div class="container col">
+  <button class="btn btn-success" (click)="startTest()">
+    <i class="fa fa-award"></i>
+    <strong>&nbsp; Start Test</strong>
+  </button>
+
+  <div class="error" *ngIf="errorMesg && errorMesg.length > 0">
+    <strong>{{ errorMesg }}</strong>
+  </div>
+</div>

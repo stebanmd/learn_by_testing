@@ -1,0 +1,56 @@
+<div class="container color-dark col-50">
+  <div class="col">
+    <p>Test your knowledge</p>
+  </div>
+  <div class="col">
+    <p>
+      <strong *ngIf="hasTimer">Time remaining for the test: {{ minutes }}:{{ seconds }}</strong>
+    </p>
+  </div>
+</div>
+<div class="container color-light col-50" *ngIf="!isFinished">
+  <div>
+    <div class="guess">
+      {{ currentCard.kana }}
+    </div>
+    <form (submit)="answer($event)" class="col">
+      <div class="form-group">
+        <input type="text" class="txt" name="myAnswer" placeholder="Your Answer" [(ngModel)]="myAnswer" />
+      </div>
+      <input type="submit" class="btn btn-success" value="Check" />
+      <input type="button" class="btn ml-2" (click)="finishTest()" value="Finalize" />
+    </form>
+  </div>
+  <div class="decks-list-container answer-list">
+    <ul>
+      <li *ngFor="let item of answerGiven" [ngClass]="{ correct: item.isCorrect, incorrect: !item.isCorrect }">
+        <i *ngIf="!item.isCorrect" class="fa fa-times-circle"></i>
+        <i *ngIf="item.isCorrect" class="fa fa-check"></i>
+        &nbsp;&nbsp;&nbsp;
+        {{ item.correctAnswer }} (<strong>{{ item.kana }}</strong
+        >)
+        <span *ngIf="!item.isCorrect"> not "{{ item.typed }}"</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container color-light" *ngIf="isFinished">
+  <div>
+    <div class="test-results-header">{{ finishMessageTitle }}</div>
+    <div class="test-results">
+      <strong>Your Results</strong>
+      <hr />
+      <div class="col-50">
+        <div class="ar">Correct Answers:</div>
+        <div class="al">{{ correctAnswer }}</div>
+        <div class="ar">Incorrect:</div>
+        <div class="al">{{ incorrectAnswer }}</div>
+        <div class="final-l ar"><b>Total Attempts:</b></div>
+        <div class="final-l al">
+          <b>{{ answerGiven.length }}</b>
+        </div>
+      </div>
+      <a class="btn btn-success back-choose" [routerLink]="['/choose']" routerLinkActive="router-link-active">Select new Decks!!</a>
+    </div>
+  </div>
+</div>
