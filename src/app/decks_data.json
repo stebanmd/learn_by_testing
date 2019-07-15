@@ -1,6 +1,7 @@
 {
   "decks": [
     {
+      "id": "a7664872-9933-4082-9dc6-1b15a1e010f0",
       "name": "Hiragana Coluna A",
       "selected": false,
       "cards": [
@@ -12,6 +13,7 @@
       ]
     },
     {
+      "id": "57defef0-e55b-46f4-bd3e-f2ff6cd316f0",
       "name": "Hiragana Coluna K",
       "selected": false,
       "cards": [
@@ -23,6 +25,7 @@
       ]
     },
     {
+      "id": "4f1f75dc-99c5-42c9-b925-b0eb592d3470",
       "name": "Hiragana Coluna S",
       "selected": false,
       "cards": [
@@ -34,6 +37,7 @@
       ]
     },
     {
+      "id": "a4e28db3-f7b1-4143-827f-191c019d42a1",
       "name": "Hiragana Coluna T",
       "selected": false,
       "cards": [
@@ -45,6 +49,7 @@
       ]
     },
     {
+      "id": "ada2e85e-21d0-4388-8435-dabb08d5a775",
       "name": "Hiragana Coluna N",
       "selected": false,
       "cards": [
@@ -56,6 +61,7 @@
       ]
     },
     {
+      "id": "b8b704f9-c71b-4312-9fb5-fa806d0564b7",
       "name": "Hiragana Coluna H",
       "selected": false,
       "cards": [
@@ -67,6 +73,7 @@
       ]
     },
     {
+      "id": "9f816cfe-3bac-47fd-8a3f-69776baff356",
       "name": "Hiragana Coluna M",
       "selected": false,
       "cards": [
@@ -78,11 +85,13 @@
       ]
     },
     {
+      "id": "ca60ad9e-2123-45f9-9f2e-fa9cd1d5128a",
       "name": "Hiragana Coluna Y",
       "selected": false,
       "cards": [{ "kana": "や", "romanji": "ya" }, { "kana": "ゆ", "romanji": "yu" }, { "kana": "よ", "romanji": "yo" }]
     },
     {
+      "id": "10313244-d020-4b39-9408-4e9c968a63ac",
       "name": "Hiragana Coluna R",
       "selected": false,
       "cards": [
@@ -94,11 +103,13 @@
       ]
     },
     {
+      "id": "e873a42d-0cd2-47a4-8e1a-a2f74330f013",
       "name": "Hiragana Coluna W",
       "selected": false,
       "cards": [{ "kana": "わ", "romanji": "wa" }, { "kana": "を", "romanji": "wo" }, { "kana": "ん", "romanji": "n" }]
     },
     {
+      "id": "2dc3e116-512c-44e4-84b3-30f85c5c4036",
       "name": "Hiragana Coluna G - Diacritics (gojūon with (han)dakuten)",
       "selected": false,
       "cards": [
@@ -110,6 +121,7 @@
       ]
     },
     {
+      "id": "de3092df-f09e-45ad-bc71-6c4cbf872409",
       "name": "Hiragana Coluna Z - Diacritics (gojūon with (han)dakuten)",
       "selected": false,
       "cards": [
@@ -121,6 +133,7 @@
       ]
     },
     {
+      "id": "502fcd8c-bbff-4dad-b83e-1cedf062614c",
       "name": "Hiragana Coluna D - Diacritics (gojūon with (han)dakuten)",
       "selected": false,
       "cards": [
@@ -132,6 +145,7 @@
       ]
     },
     {
+      "id": "25fcb951-75a6-4abf-b92b-e7b689f7354a",
       "name": "Hiragana Coluna B - Diacritics (gojūon with (han)dakuten)",
       "selected": false,
       "cards": [
@@ -143,6 +157,7 @@
       ]
     },
     {
+      "id": "ed66580b-7718-43f4-9e62-5e825d2b518d",
       "name": "Hiragana Coluna P - Diacritics (gojūon with (han)dakuten)",
       "selected": false,
       "cards": [
@@ -154,6 +169,7 @@
       ]
     },
     {
+      "id": "d29bb900-972c-4cc2-be1b-c304093a4e2e",
       "name": "Hiragana Digraphs (yōon)",
       "selected": false,
       "cards": [

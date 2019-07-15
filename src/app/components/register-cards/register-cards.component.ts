@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Card, CardModel } from '../../models/card';
+
+import { CardModel } from '../../models/card';
 
 @Component({
   selector: 'app-register-cards',
@@ -8,8 +9,7 @@ import { Card, CardModel } from '../../models/card';
   styleUrls: ['./register-cards.component.scss']
 })
 export class RegisterCardsComponent implements OnInit {
-
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   cards: CardModel[] = [];
   currentCard: CardModel;
@@ -21,15 +21,15 @@ export class RegisterCardsComponent implements OnInit {
   ngOnInit() {
     this.resetForm();
     this.route.params.subscribe(res => {
-      this.deckId = res.deck
-      this.deckName = 'Hiragana A Column'
+      this.deckId = res.deck;
+      this.deckName = 'Hiragana A Column';
     });
   }
 
   selectCard(card) {
     this.inEditMode = true;
     this.currentCard = card;
-    this.buttonLabel = "Save";
+    this.buttonLabel = 'Save';
   }
 
   save($event): void {
@@ -44,7 +44,7 @@ export class RegisterCardsComponent implements OnInit {
 
   remove() {
     if (this.currentCard.id) {
-      if (confirm("Do you want to remove this card?")) {
+      if (confirm('Do you want to remove this card?')) {
         this.cards.splice(this.cards.indexOf(this.currentCard), 1);
         this.resetForm();
       }
@@ -53,21 +53,18 @@ export class RegisterCardsComponent implements OnInit {
 
   private resetForm(): void {
     this.inEditMode = false;
-    this.buttonLabel = "Add";
+    this.buttonLabel = 'Add';
     this.currentCard = new CardModel();
   }
 
-  private update(): void {
-
-  }
+  private update(): void {}
 
   private add(): void {
     if (this.currentCard.kana.length > 0 && this.currentCard.romanji.length > 0) {
-      this.currentCard.deckId = this.deckId;
+      //this.currentCard.deckId = this.deckId;
       this.currentCard.id = (Math.random() * 40293930).toString();
       this.cards.unshift(this.currentCard);
       this.resetForm();
     }
   }
-
 }

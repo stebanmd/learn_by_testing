@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { interval } from 'rxjs';
+import { Card } from 'src/app/models/card';
+import { DeckModel } from 'src/app/models/deck';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-test',
@@ -8,7 +11,7 @@ import { interval } from 'rxjs';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private dataService: DataService) {}
 
   minutes = '';
   seconds = '';
@@ -16,37 +19,16 @@ export class TestComponent implements OnInit {
   isFinished = false;
 
   currentCard: any;
-  cards = [
-    { kana: 'あ', romanji: 'a' },
-    { kana: 'い', romanji: 'i' },
-    { kana: 'う', romanji: 'u' },
-    { kana: 'え', romanji: 'e' },
-    { kana: 'お', romanji: 'o' },
-    { kana: 'か', romanji: 'ka' },
-    { kana: 'き', romanji: 'ki' },
-    { kana: 'く', romanji: 'ku' },
-    { kana: 'け', romanji: 'ke' },
-    { kana: 'こ', romanji: 'ko' }
-  ];
+  cards: Card[] = [];
 
-  answerGiven: Answer[] = [
-    // { typed: 'a', correctAnswer: 'a', kana: 'あ', isCorrect: true },
-    // { typed: 'a', correctAnswer: 'ka', kana: 'か', isCorrect: false },
-    // { typed: 'u', correctAnswer: 'u', kana: 'う', isCorrect: true },
-  ];
+  answerGiven: Answer[] = [];
   myAnswer: string = '';
 
   ngOnInit() {
-    console.log(this.route);
-
-    this.setNewCard();
-
     this.route.params.subscribe(p => {
       var timeExtimate = p.time;
 
-      console.log(p, timeExtimate);
-
-      if (timeExtimate !== 0) {
+      if (timeExtimate !== '0') {
         var until = new Date().getTime();
         until += timeExtimate * 60 * 1000;
 
@@ -60,13 +42,21 @@ export class TestComponent implements OnInit {
           if (this.minutes === '0' && this.seconds === '0') {
             this.finishTest();
           }
-
-          console.log(x);
           return x;
         });
       } else {
         this.hasTimer = false;
       }
+
+      const filter = p.decks.split(',');
+      const decks = this.dataService.getDecks();
+
+      const selectedDecks = decks.filter(a => filter.indexOf(a.id) >= 0);
+      selectedDecks.forEach((d: DeckModel) => {
+        this.cards.push(...d.cards);
+      });
+
+      this.setNewCard();
     });
   }
 
@@ -91,9 +81,22 @@ export class TestComponent implements OnInit {
     this.setNewCard();
   }
 
+  correctAnswer: number = 0;
+  incorrectAnswer: number = 0;
+  finishMessageTitle: string = '';
   finishTest(): void {
     if (this.$counter) {
       this.$counter = undefined;
+    }
+
+    if (this.answerGiven) {
+      this.correctAnswer = this.answerGiven.filter(a => a.isCorrect).length;
+      this.incorrectAnswer = this.answerGiven.filter(a => !a.isCorrect).length;
+    }
+
+    this.finishMessageTitle = 'Congratulations';
+    if (this.incorrectAnswer > this.correctAnswer) {
+      this.finishMessageTitle = 'Better luck next time';
     }
 
     this.hasTimer = false;

@@ -36,17 +36,19 @@
 </div>
 <div class="container color-light" *ngIf="isFinished">
   <div>
-    <div class="test-results-header">{{ finish_msg }} Congratulations</div>
+    <div class="test-results-header">{{ finishMessageTitle }}</div>
     <div class="test-results">
       <strong>Your Results</strong>
       <hr />
       <div class="col-50">
         <div class="ar">Correct Answers:</div>
-        <div class="al">100</div>
+        <div class="al">{{ correctAnswer }}</div>
         <div class="ar">Incorrect:</div>
-        <div class="al">100</div>
+        <div class="al">{{ incorrectAnswer }}</div>
         <div class="final-l ar"><b>Total Attempts:</b></div>
-        <div class="final-l al"><b>100</b></div>
+        <div class="final-l al">
+          <b>{{ answerGiven.length }}</b>
+        </div>
       </div>
       <a class="btn btn-success back-choose" [routerLink]="['/choose']" routerLinkActive="router-link-active">Select new Decks!!</a>
     </div>

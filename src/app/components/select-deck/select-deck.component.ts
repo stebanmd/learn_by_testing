@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import jav_data from '../../jav_data.json';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-select-deck',
@@ -9,17 +8,18 @@ import jav_data from '../../jav_data.json';
   styleUrls: ['./select-deck.component.scss']
 })
 export class SelectDeckComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dataService: DataService) {}
   selectAllBtnLabel = 'Select all decks';
   allSelected = false;
 
   timeToTest: string;
   errorMesg: string;
-  decks: any = (<any>jav_data).decks;
   selectedDecks = [];
+  decks: any;
 
   ngOnInit() {
     this.timeToTest = '1';
+    this.decks = this.dataService.getDecks();
   }
 
   selectDeck($event, deck) {
@@ -58,7 +58,7 @@ export class SelectDeckComponent implements OnInit {
 
     var decksToTest = '';
     this.selectedDecks.forEach(element => {
-      decksToTest += ',' + element.name;
+      decksToTest += ',' + element.id;
     });
     decksToTest = decksToTest.substr(1);
     this.router.navigate(['testing', this.timeToTest, decksToTest]);
