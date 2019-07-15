@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "ng build --prod --base-href=https://stebanmd.github.io/learn_by_testing/ && angular-cli-ghpages --dir=dist/LearnByTesting/",
+    "deploy": "ng build --prod --base-href \"https://stebanmd.github.io/learn_by_testing/\" && angular-cli-ghpages",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
