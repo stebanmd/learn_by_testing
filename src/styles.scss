@@ -1,14 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
-$primary: #2E9CE6;
-$secondary: #57B3F1;
+$primary: #2e9ce6;
+$secondary: #57b3f1;
 $dark: #2885c4;
-$item: #3FA0E1;
-$text: #FFF;
+$item: #3fa0e1;
+$text: #fff;
 $selected: #003a61;
 $error: #be5543;
-$correct: #A5f883;
+$correct: #a5f883;
 body {
   background: $primary;
   padding: 3em;
@@ -39,7 +39,7 @@ a {
 }
 
 .col {
-  padding: .4em 1.3em
+  padding: 0.4em 1.3em;
 }
 
 .color-dark {
@@ -57,7 +57,7 @@ textarea.txt {
   display: block;
   width: 100%;
   margin-bottom: 2em;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .form-group {
@@ -69,10 +69,10 @@ textarea {
   resize: none;
 }
 
-input[type=time] {
-  margin: 0 0 0 .8em;
+input[type='time'] {
+  margin: 0 0 0 0.8em;
   width: 20%;
-  padding: .4em;
+  padding: 0.4em;
 }
 
 input.btn,
@@ -132,7 +132,7 @@ button.btn {
     li {
       margin: 5px;
       background: $item;
-      padding: .5em;
+      padding: 0.5em;
       font-weight: bold;
       cursor: pointer;
     }
@@ -140,7 +140,7 @@ button.btn {
       background: #003a61;
     }
     .correct {
-      background: $primary
+      background: $primary;
     }
     .incorrect {
       background: $error;
@@ -158,7 +158,7 @@ button.btn {
     li {
       margin: 3px;
       background: $item;
-      padding: .3em;
+      padding: 0.3em;
       font-weight: bold;
       cursor: pointer;
     }
@@ -177,4 +177,11 @@ button.btn {
 .answer-list {
   overflow: hidden;
   max-height: 210px;
+}
+
+hr {
+  height: 1px;
+  background-color: $dark;
+  border: 0;
+  margin: 1em auto;
 }

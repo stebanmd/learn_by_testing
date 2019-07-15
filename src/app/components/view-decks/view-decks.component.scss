@@ -1,0 +1,30 @@
+@import '../../../styles';
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 10px;
+  .card {
+    display: block;
+    background-color: $item;
+    min-width: 70px;
+    margin: 10px;
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+
+    h4 {
+      text-align: center;
+      border-top: 1px dashed $dark;
+      padding-top: 5px;
+      width: 80%;
+      align-items: center;
+      margin: 0 auto 10px auto;
+    }
+  }
+}
+
+.ml-20 {
+  margin-left: 20px;
+}

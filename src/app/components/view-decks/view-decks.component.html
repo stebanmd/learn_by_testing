@@ -1,0 +1,19 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Check all the decks below with its correspondent flashcards:</p>
+  </div>
+</div>
+
+<div class="decks-list-container color-light">
+  <div class="col" *ngFor="let deck of decks">
+    <span>{{ deck.name }}</span>
+    <div class="cards">
+      <div class="card" *ngFor="let card of deck.cards">
+        <h1>{{ card.kana }}</h1>
+        <h4>{{ card.romanji }}</h4>
+      </div>
+    </div>
+    <hr />
+  </div>
+  <button class="btn btn-success ml-20" (click)="backToTop()">Return to top</button>
+</div>

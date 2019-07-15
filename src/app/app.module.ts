@@ -11,6 +11,7 @@ import { RegisterDeckComponent } from './components/register-deck/register-deck.
 import { ResultComponent } from './components/result/result.component';
 import { SelectDeckComponent } from './components/select-deck/select-deck.component';
 import { TestComponent } from './components/test/test.component';
+import { ViewDecksComponent } from './components/view-decks/view-decks.component';
 import { DataService } from './services/data.service';
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DataService } from './services/data.service';
     TestComponent,
     HomeComponent,
     RegisterCardsComponent,
-    ResultComponent
+    ResultComponent,
+    ViewDecksComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, BrowserAnimationsModule],
   providers: [DataService],
