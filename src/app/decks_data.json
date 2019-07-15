@@ -67,7 +67,7 @@
       "cards": [
         { "kana": "は", "romanji": "ha" },
         { "kana": "ひ", "romanji": "hi" },
-        { "kana": "ふ", "romanji": "hu" },
+        { "kana": "ふ", "romanji": "fu" },
         { "kana": "へ", "romanji": "he" },
         { "kana": "ほ", "romanji": "ho" }
       ]
@@ -200,6 +200,214 @@
         { "kana": "りゃ", "romanji": "rya" },
         { "kana": "りゅ", "romanji": "ryu" },
         { "kana": "りょ", "romanji": "ryo" }
+      ]
+    },
+    {
+      "id": "9ae5592d-acbc-4a43-9d0d-7df7f91679cb",
+      "name": "Katakana Coluna A",
+      "selected": false,
+      "cards": [
+        { "kana": "ア", "romanji": "a" },
+        { "kana": "イ", "romanji": "i" },
+        { "kana": "ウ", "romanji": "u" },
+        { "kana": "エ", "romanji": "e" },
+        { "kana": "オ", "romanji": "o" }
+      ]
+    },
+    {
+      "id": "89cfca19-9e75-45dd-8d43-83fa4377d9a8",
+      "name": "Katakana Coluna K",
+      "selected": false,
+      "cards": [
+        { "kana": "カ", "romanji": "ka" },
+        { "kana": "キ", "romanji": "ki" },
+        { "kana": "ク", "romanji": "ku" },
+        { "kana": "ケ", "romanji": "ke" },
+        { "kana": "コ", "romanji": "ko" }
+      ]
+    },
+    {
+      "id": "70525b95-f238-421b-a377-e216d0c1f56a",
+      "name": "Katakana Coluna S",
+      "selected": false,
+      "cards": [
+        { "kana": "サ", "romanji": "sa" },
+        { "kana": "シ", "romanji": "shi" },
+        { "kana": "ス", "romanji": "su" },
+        { "kana": "セ", "romanji": "se" },
+        { "kana": "ソ", "romanji": "so" }
+      ]
+    },
+    {
+      "id": "a105ade3-1082-41cc-b2bf-eb3e489a7ba4",
+      "name": "Katakana Coluna T",
+      "selected": false,
+      "cards": [
+        { "kana": "タ", "romanji": "ta" },
+        { "kana": "チ", "romanji": "chi" },
+        { "kana": "ツ", "romanji": "tsu" },
+        { "kana": "テ", "romanji": "te" },
+        { "kana": "ト", "romanji": "to" }
+      ]
+    },
+    {
+      "id": "1e37aae0-9164-401e-a082-530de63f1d04",
+      "name": "Katakana Coluna N",
+      "selected": false,
+      "cards": [
+        { "kana": "ナ", "romanji": "na" },
+        { "kana": "ニ", "romanji": "ni" },
+        { "kana": "ヌ", "romanji": "nu" },
+        { "kana": "ネ", "romanji": "ne" },
+        { "kana": "ノ", "romanji": "no" }
+      ]
+    },
+    {
+      "id": "77400e28-cd22-4b30-b1fe-929ca812ee9c",
+      "name": "Katakana Coluna H",
+      "selected": false,
+      "cards": [
+        { "kana": "ハ", "romanji": "ha" },
+        { "kana": "ヒ", "romanji": "hi" },
+        { "kana": "フ", "romanji": "fu" },
+        { "kana": "ヘ", "romanji": "he" },
+        { "kana": "ホ", "romanji": "ho" }
+      ]
+    },
+    {
+      "id": "686c600c-f66f-4624-a58f-cd4bc1638e01",
+      "name": "Katakana Coluna M",
+      "selected": false,
+      "cards": [
+        { "kana": "マ", "romanji": "ma" },
+        { "kana": "ミ", "romanji": "mi" },
+        { "kana": "ム", "romanji": "mu" },
+        { "kana": "メ", "romanji": "me" },
+        { "kana": "モ", "romanji": "mo" }
+      ]
+    },
+    {
+      "id": "0f49f3c0-bbdd-4422-9a29-2c9480b2e662",
+      "name": "Katakana Coluna Y",
+      "selected": false,
+      "cards": [{ "kana": "ヤ", "romanji": "ya" }, { "kana": "ユ", "romanji": "yu" }, { "kana": "ヨ", "romanji": "yo" }]
+    },
+    {
+      "id": "5b28e1dd-2219-4465-a500-9c7f4ca747f8",
+      "name": "Katakana Coluna R",
+      "selected": false,
+      "cards": [
+        { "kana": "ラ", "romanji": "ra" },
+        { "kana": "リ", "romanji": "ri" },
+        { "kana": "ル", "romanji": "ru" },
+        { "kana": "レ", "romanji": "re" },
+        { "kana": "ロ", "romanji": "ro" }
+      ]
+    },
+    {
+      "id": "8c3bbdb8-05df-4a0c-8bd4-216e2dc700f7",
+      "name": "Katakana Coluna W",
+      "selected": false,
+      "cards": [
+        { "kana": "ワ", "romanji": "wa" },
+        { "kana": "ヰ", "romanji": "wi" },
+        { "kana": "ヱ", "romanji": "we" },
+        { "kana": "ヲ", "romanji": "wo" },
+        { "kana": "ン", "romanji": "n" }
+      ]
+    },
+    {
+      "id": "1c5da629-1216-4551-86b9-ad5d770e5c59",
+      "name": "Katakana Coluna G - diacritics: gojūon with (han)dakuten",
+      "selected": false,
+      "cards": [
+        { "kana": "ガ", "romanji": "ga" },
+        { "kana": "ギ", "romanji": "gi" },
+        { "kana": "グ", "romanji": "gu" },
+        { "kana": "ゲ", "romanji": "ge" },
+        { "kana": "ゴ", "romanji": "go" }
+      ]
+    },
+    {
+      "id": "e32ed79a-5c25-4af0-8b54-3d4c8a92d9d6",
+      "name": "Katakana Coluna Z - diacritics: gojūon with (han)dakuten",
+      "selected": false,
+      "cards": [
+        { "kana": "ザ", "romanji": "za" },
+        { "kana": "ジ", "romanji": "ji" },
+        { "kana": "ズ", "romanji": "zu" },
+        { "kana": "ゼ", "romanji": "ze" },
+        { "kana": "ゾ", "romanji": "zo" }
+      ]
+    },
+    {
+      "id": "42c627a6-5635-49ef-b9a5-9a33f618bb16",
+      "name": "Katakana Coluna D - diacritics: gojūon with (han)dakuten",
+      "selected": false,
+      "cards": [
+        { "kana": "ダ", "romanji": "da" },
+        { "kana": "ヂ", "romanji": "di" },
+        { "kana": "ヅ", "romanji": "dzu" },
+        { "kana": "デ", "romanji": "de" },
+        { "kana": "ド", "romanji": "do" }
+      ]
+    },
+    {
+      "id": "419d31c3-c55a-4ab9-ae02-a651a715cadb",
+      "name": "Katakana Coluna B - diacritics: gojūon with (han)dakuten",
+      "selected": false,
+      "cards": [
+        { "kana": "バ", "romanji": "ba" },
+        { "kana": "ビ", "romanji": "bi" },
+        { "kana": "ブ", "romanji": "bu" },
+        { "kana": "ベ", "romanji": "be" },
+        { "kana": "ボ", "romanji": "bo" }
+      ]
+    },
+    {
+      "id": "a89c8de2-cad4-49c9-93ae-c96c981305c1",
+      "name": "Katakana Coluna P - diacritics: gojūon with (han)dakuten",
+      "selected": false,
+      "cards": [
+        { "kana": "パ", "romanji": "pa" },
+        { "kana": "ピ", "romanji": "pi" },
+        { "kana": "プ", "romanji": "pu" },
+        { "kana": "ペ", "romanji": "pe" },
+        { "kana": "ポ", "romanji": "po" }
+      ]
+    },
+    {
+      "id": "a0758f84-7516-4bdf-a5d9-e510269df7d3",
+      "name": "Katakana Digraphs (yōon)",
+      "selected": false,
+      "cards": [
+        { "kana": "キャ", "romanji": "kya" },
+        { "kana": "キュ", "romanji": "kyu" },
+        { "kana": "キョ", "romanji": "kyo" },
+
+        { "kana": "シャ", "romanji": "sha" },
+        { "kana": "シュ", "romanji": "shu" },
+        { "kana": "ショ", "romanji": "sho" },
+
+        { "kana": "チャ", "romanji": "cha" },
+        { "kana": "チュ", "romanji": "chu" },
+        { "kana": "チョ", "romanji": "cho" },
+
+        { "kana": "ニャ", "romanji": "nya" },
+        { "kana": "ニュ", "romanji": "nyu" },
+        { "kana": "ニョ", "romanji": "nyo" },
+
+        { "kana": "ヒャ", "romanji": "hya" },
+        { "kana": "ヒュ", "romanji": "hyu" },
+        { "kana": "ヒョ", "romanji": "hyo" },
+
+        { "kana": "ミャ", "romanji": "mya" },
+        { "kana": "ミュ", "romanji": "myu" },
+        { "kana": "ミョ", "romanji": "myo" },
+
+        { "kana": "リャ", "romanji": "rya" },
+        { "kana": "リュ", "romanji": "ryu" },
+        { "kana": "リョ", "romanji": "ryo" }
       ]
     }
   ]
