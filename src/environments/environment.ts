@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyA7X8UKQZGFlKmGKhSCdWUlGKFhGTyiBjc',
+    authDomain: 'jav-flashcards.firebaseapp.com',
+    databaseURL: 'https://jav-flashcards.firebaseio.com',
+    projectId: 'jav-flashcards',
+    storageBucket: '',
+    messagingSenderId: '104648796114',
+    appId: '1:104648796114:web:476a614a5f0be026'
+  }
 };
 
 /*

@@ -16,7 +16,9 @@
   </div>
   <hr />
   <ul>
-    <li *ngFor="let item of decks" (click)="selectDeck($event, item)" [ngClass]="{ 'selected-option': item.selected }">{{ item.name }}</li>
+    <li *ngFor="let item of decks | async" (click)="selectDeck($event, item)" [ngClass]="{ 'selected-option': item.selected }">
+      {{ item.name }}
+    </li>
   </ul>
 </div>
 

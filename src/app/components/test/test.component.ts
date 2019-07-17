@@ -18,7 +18,7 @@ export class TestComponent implements OnInit {
   hasTimer = true;
   isFinished = false;
 
-  currentCard: any;
+  currentCard: any = {};
   cards: Card[] = [];
 
   answerGiven: Answer[] = [];
@@ -51,12 +51,14 @@ export class TestComponent implements OnInit {
       const filter = p.decks.split(',');
       const decks = this.dataService.getDecks();
 
-      const selectedDecks = decks.filter(a => filter.indexOf(a.id) >= 0);
-      selectedDecks.forEach((d: DeckModel) => {
-        this.cards.push(...d.cards);
-      });
+      decks.subscribe(deck => {
+        const selectedDecks = deck.filter(a => filter.indexOf(a.id) >= 0);
+        selectedDecks.forEach((d: DeckModel) => {
+          this.cards.push(...d.cards);
+        });
 
-      this.setNewCard();
+        this.setNewCard();
+      });
     });
   }
 

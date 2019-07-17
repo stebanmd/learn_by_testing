@@ -5,7 +5,7 @@
 </div>
 
 <div class="decks-list-container color-light">
-  <div class="col" *ngFor="let deck of decks">
+  <div class="col" *ngFor="let deck of decks | async">
     <span>{{ deck.name }}</span>
     <div class="cards">
       <div class="card" *ngFor="let card of deck.cards">

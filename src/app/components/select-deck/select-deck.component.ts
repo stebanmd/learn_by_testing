@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { DeckModel } from 'src/app/models/deck';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -15,7 +17,7 @@ export class SelectDeckComponent implements OnInit {
   timeToTest: string;
   errorMesg: string;
   selectedDecks = [];
-  decks: any;
+  decks: Observable<DeckModel[]>;
 
   ngOnInit() {
     this.timeToTest = '1';
@@ -35,12 +37,16 @@ export class SelectDeckComponent implements OnInit {
   selectAll() {
     if (this.allSelected) {
       this.selectedDecks.splice(0, this.selectedDecks.length);
-      this.decks.forEach(d => (d.selected = false));
+      this.decks.subscribe(deck => deck.forEach(d => (d.selected = false)));
     } else {
-      for (let deck of this.decks) {
-        if (this.selectedDecks.indexOf(deck) < 0) this.selectedDecks.push(deck);
-        deck.selected = true;
-      }
+      this.decks.subscribe(deck => {
+        deck.forEach(d => {
+          if (this.selectedDecks.indexOf(d) < 0) {
+            this.selectedDecks.push(d);
+          }
+          d.selected = true;
+        });
+      });
     }
 
     this.allSelected = !this.allSelected;

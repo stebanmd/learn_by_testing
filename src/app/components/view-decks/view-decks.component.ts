@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 export class ViewDecksComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
-  decks = [];
+  decks: Observable<any[]>;
   ngOnInit() {
     this.decks = this.dataService.getDecks();
   }
