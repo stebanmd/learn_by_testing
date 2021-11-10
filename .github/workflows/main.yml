@@ -1,0 +1,40 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on: 
+  pull_request:
+    branches: [ beta ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      job:
+        default: test-dev
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          echo SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8` >> $GITHUB_ENV
+          echo "runid=${{github.run_id}}" >> $GITHUB_ENV
+          echo LASTCOMMIT=`git rev-parse --short=8 HEAD` >> $GITHUB_ENV
+
+      - name: SHA
+        run: echo ${SHORT_SHA}
+        
+      - name: RUN
+        run: echo ${runid}
+        
+      - name: COMMIT
+        run: echo ${LASTCOMMIT}
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
