@@ -13,12 +13,16 @@ jobs:
      
   dev-deploy:
     needs: test
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-latest
+    env:
+      name: dev
     steps:
        - run: echo "dev-deploy"
 
   prod-deploy:
     runs-on: ubuntu-latest
     needs: dev-deploy
+    env:
+      name: prod
     steps:
     - run: echo "prod-deploy"
