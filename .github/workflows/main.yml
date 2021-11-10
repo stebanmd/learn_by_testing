@@ -25,10 +25,10 @@ jobs:
           echo LASTCOMMIT=`git rev-parse --short=8 HEAD` >> $GITHUB_ENV
 
       - name: SHA
-        run: echo ${SHORT_SHA}
+        run: echo ${{ github.SHORT_SHA}}
         
       - name: RUN
-        run: echo ${runid}
+        run: echo ${{ env.runid}}
         
       - name: COMMIT
         run: echo ${LASTCOMMIT}
