@@ -19,7 +19,7 @@ jobs:
       url: https://test.com
     steps:
        - run: echo "dev-deploy"
-       - run: echo ${secrets.ENVARIABLE}
+       - run: echo "${ENVARIABLE}"
 
   prod-deploy:
     runs-on: ubuntu-latest
