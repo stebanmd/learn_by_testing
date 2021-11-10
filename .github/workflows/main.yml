@@ -11,8 +11,10 @@ jobs:
     environment: 
       name: dev
     steps:
-      - name: Dump GitHub context        
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(env) }}
-        run: echo "$GITHUB_CONTEXT"
+      - name: SECRET
+        run: echo "${{ secrets.ENVARIABLE }}"
+      - name: ENV
+        run: echo "${{ env.ENVARIABLE }}"
+      - name: ENVNAME
+        run: echo "${{ dev.ENVARIABLE }}"
       
