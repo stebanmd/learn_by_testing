@@ -14,7 +14,7 @@ on:
 env:
   test: t
   tag: $(git rev-parse --short "$GITHUB_SHA")
-  1tag: $(git rev-parse --short=8 HEAD)
+  tagHead: $(git rev-parse --short=8 HEAD)
     
   
 jobs:
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ env.tag }}
-      - run: echo ${{ env.1tag }}
+      - run: echo ${{ env.tagHead }}
      
   dev-deploy:
     name: Deploy dev-deploy
