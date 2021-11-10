@@ -14,7 +14,7 @@ on:
 env:
   test: t
   tag: $(git rev-parse --short "$GITHUB_SHA")
-  tagHead: $(git rev-parse --short=8 HEAD)
+  tagHead: ${{ github.run_id }}-$(git rev-parse --short=8 HEAD)
     
   
 jobs:
