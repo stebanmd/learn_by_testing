@@ -16,9 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       name: dev
+      url: https://test.com
     steps:
        - run: echo "dev-deploy"
-       - run: echo ${{ secrets.ENVARIABLE }}
+       - run: echo ${secrets.ENVARIABLE}
 
   prod-deploy:
     runs-on: ubuntu-latest
