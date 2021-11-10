@@ -32,6 +32,7 @@ jobs:
     steps:
     - name: ${{ github.event.inputs.job }} - step 1
       run: echo "${{ github.event.inputs.job }} triggered!"
+    - run: echo ${{ env.tagHead }}
 
   prod-deploy:
     name: Deploy prod-deploy
@@ -40,3 +41,4 @@ jobs:
     steps:
     - name: ${{ github.event.inputs.job }} - step 1
       run: echo "${{ github.event.inputs.job }} triggered!"
+    - run: echo ${{ env.tagHead }}
