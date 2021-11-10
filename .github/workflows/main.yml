@@ -15,7 +15,7 @@ on:
 
 env:
   serviceShortName: documentation-client
-  currentTag: "${{ github.run_id }}-echo git rev-parse --short=8 HEAD"
+  currentTag: "${{ github.run_id }}-`echo git rev-parse --short=8 HEAD`"
 
 jobs:
   build:
