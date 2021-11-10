@@ -3,45 +3,22 @@
 name: CI
 
 on:
-  pull_request:
-  push:
-    branches:
-      - beta
-  workflow_dispatch:
-    inputs:
-      job:
-        description: 'Job to run.'
-        required: true
-        default: 'prod-deploy'
-        
-env:
-  test: t
-  tag: $(git rev-parse --short "$GITHUB_SHA")
-  tagHead: ${{ github.run_id }}-$(git rev-parse --short=8 HEAD)
-    
+  workflow_dispatch:  
   
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - run: echo ${{ env.tag }}
-      - run: echo ${{ env.tagHead }}
+      - run: echo "test"
      
   dev-deploy:
-    name: Deploy dev-deploy
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'workflow_dispatch'}}
+    needs: test
+    runs-on: ubuntu-latest    
     steps:
-    - name: ${{ github.event.inputs.job }} - step 1
-      run: echo "${{ github.event.inputs.job }} triggered!"
-    - run: echo ${{ env.tagHead }}
+       - run: echo "dev-deploy"
 
   prod-deploy:
-    name: Deploy prod-deploy
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.job == 'prod-deploy'}}
+    needs: dev-deploy
     steps:
-    - name: ${{ github.event.inputs.job }} - step 1
-      run: echo "${{ github.event.inputs.job }} triggered!"
-    - run: echo ${{ env.tagHead }}
+    - run: echo "prod-deploy"
