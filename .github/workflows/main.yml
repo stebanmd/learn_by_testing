@@ -16,6 +16,11 @@ env:
   run: echo COMMIT_TAG=`git rev-parse --short=8 HEAD` >> $GITHUB_ENV
   
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ env.COMMIT_TAG }}
+     
   dev-deploy:
     name: Deploy dev-deploy
     runs-on: ubuntu-latest
