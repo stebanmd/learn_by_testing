@@ -18,7 +18,7 @@ jobs:
       name: dev
     steps:
        - run: echo "dev-deploy"
-       - run: echo ${{env.envariable}}
+       - run: echo ${{secrets.envariable}}
 
   prod-deploy:
     runs-on: ubuntu-latest
