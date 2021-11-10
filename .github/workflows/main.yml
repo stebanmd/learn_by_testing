@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'Job to run.'
+        required: true
+        default: 'prod-deploy'
+        
+env:
+  test: t
+  run: echo COMMIT_TAG=`git rev-parse --short=8 HEAD` >> $GITHUB_ENV
+  
+jobs:
+  dev-deploy:
+    name: Deploy dev-deploy
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.job == 'dev-deploy'}}
+    steps:
+    - name: ${{ github.event.inputs.job }} - step 1
+      run: echo "${{ github.event.inputs.job }} triggered!"
+
+  prod-deploy:
+    name: Deploy prod-deploy
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.job == 'prod-deploy'}}
+    steps:
+    - name: ${{ github.event.inputs.job }} - step 1
+      run: echo "${{ github.event.inputs.job }} triggered!"
