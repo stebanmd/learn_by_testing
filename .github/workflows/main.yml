@@ -14,13 +14,21 @@ jobs:
     name: Add 3 and 7
     runs-on: ubuntu-latest
     steps:
+      - name: Create folders for rendered charts
+        run: |
+          mkdir -p path/to/dev
+          mkdir -p path/to/test
+          mkdir -p path/to/prod
       - shell: bash
         run: |
-          expr 3 + 7 > math-homework.txt
-      - name: Upload math result for job 1
+          expr "dev" > path/to/dev/homework.txt
+          expr "test" > path/to/test/homework.txt
+          expr "prod" > path/to/prod/homework.txt
+      - name: Upload
         uses: actions/upload-artifact@v2
         with:
           name: homework
-          path: math-homework.txt
+          path: path/to
+      - run: ls
 
       
