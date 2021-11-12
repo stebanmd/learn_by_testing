@@ -3,7 +3,11 @@
 name: CI
 
 on:
-  push:  
+  workflow_dispatch:
+    inputs:
+      service_version:
+        description: Image version
+        default: latest
   
 jobs:
   one:
@@ -13,7 +17,7 @@ jobs:
     steps:
       - name: SECRET
         run: echo "${{ secrets.ENVARIABLE }}"
-      - name: ENV
-        run: echo "${{ env.ENVARIABLE }}"
+      - name: version
+        run: echo "${{ github.event.inputs.service_version }}"
 
       
