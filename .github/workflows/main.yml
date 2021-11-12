@@ -10,14 +10,17 @@ on:
         default: latest
   
 jobs:
-  one:
+  job_1:
+    name: Add 3 and 7
     runs-on: ubuntu-latest
-    environment: 
-      name: dev
     steps:
-      - name: SECRET
-        run: echo "${{ secrets.ENVARIABLE }}"
-      - name: version
-        run: echo "${{ github.event.inputs.service_version }}"
+      - shell: bash
+        run: |
+          expr 3 + 7 > math-homework.txt
+      - name: Upload math result for job 1
+        uses: actions/upload-artifact@v2
+        with:
+          name: homework
+          path: math-homework.txt
 
       
