@@ -1,0 +1,15 @@
+name: download
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  job_2:
+    name: Multiply by 9
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download math result for job 1
+        uses: actions/download-artifact@v2
+        with:
+          name: homework
+      - run: ls
