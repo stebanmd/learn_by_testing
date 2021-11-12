@@ -5,11 +5,12 @@ on:
 
 jobs:
   job_2:
-    name: Multiply by 9
+    name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Download math result for job 1
-        uses: actions/download-artifact@v2
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
         with:
-          name: homework
-      - run: ls
+          workflow: main.yml
+          workflow_conclusion: success
+      - run: ls -R
