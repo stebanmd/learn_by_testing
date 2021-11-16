@@ -6,7 +6,7 @@ on:
   push:
         
 env:
-  tag: ${{ github.run_id }}-${ github.sha::7 }
+  tag: ${{ github.run_id }}-${{ github.sha::7 }}
   
   
 jobs:
