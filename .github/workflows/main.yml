@@ -26,8 +26,8 @@ jobs:
         if: ${{ github.event_name != 'push' }}
         run: echo "not push"
         
-      - name: run echo call
-        uses: stebanmd/learn_by_testing/.github/workflows/test.yml@main
+  jobs_2:
+    uses: stebanmd/learn_by_testing/.github/workflows/test.yml@main
 
 
       
