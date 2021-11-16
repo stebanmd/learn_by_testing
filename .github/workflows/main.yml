@@ -6,7 +6,7 @@ on:
   push:
         
 env:
-  tag: ${GITHUB_SHA::7}
+  tag: ${{ github.run_id }}-${GITHUB_SHA::7}
   
   
 jobs:
@@ -15,6 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:     
       - name: run echo
-        run: echo ${{ github.run_id }}-${{ env.tag }}
+        run: echo ${{ env.tag }}
 
       
