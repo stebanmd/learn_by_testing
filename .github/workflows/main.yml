@@ -10,13 +10,15 @@ on:
         default: latest
         
 env:
-  tag: ${{ github.run_id }}-$(`${{ github.sha }} | cut -c1-8`)
+  tag: ${{ github.sha }} | cut -c1-8
+  
   
 jobs:
   job_1:
     name: test
     runs-on: ubuntu-latest
     steps:     
-      - run: echo ${{ env.tag }}
+      - name: run echo
+        run: echo ${{ github.run_id }}-${{ env.tag }}
 
       
