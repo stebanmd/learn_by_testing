@@ -1,0 +1,13 @@
+name: TEST
+on:
+  workflow_call:    
+  workflow_dispatch:
+
+jobs:
+  deploy-test:
+    name: Sandbox
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifacts
+        run: echo ${{ github.event_name }}
+    
