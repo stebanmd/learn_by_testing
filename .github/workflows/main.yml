@@ -8,27 +8,15 @@ on:
       service_version:
         description: Image version
         default: latest
+        
+env:
+  tag: ${{ github.run_id }}-$(`${{ github.sha }}` | cut -c1-8)
   
 jobs:
   job_1:
-    name: Add 3 and 7
+    name: test
     runs-on: ubuntu-latest
-    steps:
-      - name: Create folders for rendered charts
-        run: |
-          mkdir -p path/to/dev
-          mkdir -p path/to/test
-          mkdir -p path/to/prod
-      - shell: bash
-        run: |
-          expr "dev" > path/to/dev/homework.txt
-          expr "test" > path/to/test/homework.txt
-          expr "prod" > path/to/prod/homework.txt
-      - name: Upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: homework
-          path: path/to
-      - run: ls
+    steps:     
+      - run: echo ${{ env.tag }}
 
       
