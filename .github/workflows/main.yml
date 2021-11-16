@@ -10,7 +10,7 @@ on:
         default: latest
         
 env:
-  tag: ${{ github.run_id }}-$(`${{ github.sha }}` | cut -c1-8)
+  tag: ${{ github.run_id }}-$(`${{ github.sha }} | cut -c1-8`)
   
 jobs:
   job_1:
