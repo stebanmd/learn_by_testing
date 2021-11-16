@@ -27,7 +27,7 @@ jobs:
         run: echo "not push"
         
   jobs_2:
-    uses: stebanmd/learn_by_testing/.github/workflows/test.yml@main
+    uses: stebanmd/learn_by_testing/.github/workflows/test.yml@beta
 
 
       
