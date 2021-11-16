@@ -4,17 +4,27 @@ name: CI
 
 on:
   push:
-        
-env:
-  tag: ${{ github.run_id }}-${{ github.sha::7 }}
-  
-  
+  workflow_dispatch:
+
 jobs:
   job_1:
-    name: test
     runs-on: ubuntu-latest
     steps:     
       - name: run echo
-        run: echo ${{ env.tag }}
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: echo "dispatch"
+        
+      - name: run echo 2
+        if: ${{ github.event_name != 'workflow_dispatch' }}
+        run: echo "not dispatch"
+        
+      - name: run echo 3
+        if: ${{ github.event_name == 'push' }}
+        run: echo "push"
+        
+      - name: run echo 4
+        if: ${{ github.event_name != 'push' }}
+        run: echo "not push"
+
 
       
